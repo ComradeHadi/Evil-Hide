@@ -24,6 +24,13 @@ adb shell pm unhide {packag_name}
 `hide`命令相当于`uninstall -k`卸载应用但是保留数据
 `disable`...
 
+###Warning
+在Android上一个应用必须启动一次后他的`BroadcastReceiver`才会生效，所以第一次安装本应用后使用拨号盘并不会启动，必须使用特殊手段启动，例如在adb下执行以下命令：
+```
+adb shell am start -n me.sweetll.evilhide/.MainActivity
+```
+这个问题将会在下一个版本修复（Maybe暑假）
+
 ###用法：
 本软件的默认启动密码是`#1234`
 启动方式：
